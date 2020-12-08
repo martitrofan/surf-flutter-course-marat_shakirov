@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(App());
+}
+
+class App extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: MyFirstStatefulWidget(),
+      title: 'Some title',
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -21,11 +31,13 @@ class MyApp extends StatelessWidget {
 
 class MyFirstStatelessWidget extends StatelessWidget {
   int _buildCallingCounter = 0;
+  // Context вне области видимости и не является переменной класса
+  // Type getContextRuntimeType() => context.runtimeType; //Error: The getter 'context' isn't defined for the class 'MyFirstStatelessWidget'.
 
   @override
   Widget build(BuildContext context) {
     _buildCallingCounter++;
-    print('Метод build был вызван $_buildCallingCounter раз(а)'); //Всегда 1, Stateless пересоздается при hotreload.
+    print('Метод build был вызван $_buildCallingCounter раз(а)');
 
     return Container(
       child: Center(
@@ -35,6 +47,7 @@ class MyFirstStatelessWidget extends StatelessWidget {
   }
 }
 
+
 class MyFirstStatefulWidget extends StatefulWidget {
   @override
   _MyFirstStatefulWidgetState createState() => _MyFirstStatefulWidgetState();
@@ -43,10 +56,14 @@ class MyFirstStatefulWidget extends StatefulWidget {
 class _MyFirstStatefulWidgetState extends State<MyFirstStatefulWidget> {
   int _buildCallingCounter = 0;
 
+  // State реализует get context, отработает без проблем
+  Type getContextRuntimeType() => context.runtimeType;
+
   @override
   Widget build(BuildContext context) {
     _buildCallingCounter++;
     print('Метод build был вызван $_buildCallingCounter раз(а)'); //Счетчик увеличивается при хотрелоад, выводится верное значение, у Stateful состояние живёт дольше виджета и при перерисовке контекст не теряется.
+    print(getContextRuntimeType());
     return Container(
       child: Center(
         child: Text('Hello!\nI am\nstateful.'),
