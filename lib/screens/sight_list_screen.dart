@@ -17,10 +17,17 @@ class _SightListScreenState extends State<SightListScreen> {
 
   Widget _buildAppBar() {
     return AppBar(
-      title: Text(
-        appBarText,
-        textAlign: TextAlign.left,
-        style: _appBarStyle,
+      title: RichText(
+        text: TextSpan(style: _appBarStyle, children: [
+          TextSpan(children: [
+            TextSpan(text: 'С', style: TextStyle(color: Colors.green)),
+            TextSpan(text: 'писок\n'),
+          ]),
+          TextSpan(children: [
+            TextSpan(text: 'и', style: TextStyle(color: Colors.yellow)),
+            TextSpan(text: 'нтересных мест'),
+          ]),
+        ]),
       ),
       elevation: 0,
       backgroundColor: Colors.transparent,
