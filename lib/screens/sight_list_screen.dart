@@ -20,11 +20,17 @@ class _SightListScreenState extends State<SightListScreen> {
       title: RichText(
         text: TextSpan(style: _appBarStyle, children: [
           TextSpan(children: [
-            TextSpan(text: 'С', style: TextStyle(color: Colors.green)),
+            TextSpan(
+              text: 'С',
+              style: TextStyle(color: Colors.green),
+            ),
             TextSpan(text: 'писок\n'),
           ]),
           TextSpan(children: [
-            TextSpan(text: 'и', style: TextStyle(color: Colors.yellow)),
+            TextSpan(
+              text: 'и',
+              style: TextStyle(color: Colors.yellow),
+            ),
             TextSpan(text: 'нтересных мест'),
           ]),
         ]),
