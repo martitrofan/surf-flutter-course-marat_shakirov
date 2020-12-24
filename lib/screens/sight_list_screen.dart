@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:places/res/res.dart';
 import 'package:places/screens/sight_card.dart';
+import 'package:places/screens/sight_details.dart';
 
 import '../mocks.dart';
 
@@ -26,8 +27,20 @@ class _SightListScreenState extends State<SightListScreen> {
   Widget _buildBody() {
     return ListView.builder(
       itemCount: mocks.length,
-      itemBuilder: (context, index) => SightCard(
-        sight: mocks[index],
+      itemBuilder: (context, index) => GestureDetector(
+        child: SightCard(
+          sight: mocks[index],
+        ),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SightDetails(
+                sight: mocks[index],
+              ),
+            ),
+          );
+        },
       ),
     );
   }

@@ -8,4 +8,11 @@ const sightCardTitleColor = Color(0xff3B3E5B);
 
 const bottomBackgroundColor = Color(0xffF5F5F5);
 
+const disabledColor = Colors.black45;
+const enabledColor = Colors.black;
+
+const RouteButtonColor = Colors.green;
+
+
+
 
