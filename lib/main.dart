@@ -15,17 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "places",
-      home: LandingScreen(),
+      home: SightListScreen(),
     );
   }
 }
 
-class LandingScreen extends StatelessWidget {
-  const LandingScreen({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final bool isLoggedIn = true;
-    return isLoggedIn ? SightListScreen() : SightDetails(sight: mocks[1]);
-  }
-}
