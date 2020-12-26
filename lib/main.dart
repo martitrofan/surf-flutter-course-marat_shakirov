@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:places/screens/sight_details.dart';
 import 'package:places/screens/sight_list_screen.dart';
+
+import 'mocks.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,3 +19,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

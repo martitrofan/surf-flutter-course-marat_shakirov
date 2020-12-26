@@ -1,30 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:places/res/res.dart';
+import 'package:places/screens/sight_card.dart';
+import 'package:places/screens/sight_details.dart';
 
+import '../mocks.dart';
+
+///список мест для посещения
 class SightListScreen extends StatefulWidget {
   @override
   _SightListScreenState createState() => _SightListScreenState();
 }
 
 class _SightListScreenState extends State<SightListScreen> {
-
-  InlineSpan _buildMulticoloredRow(Color color, String text) {
-    return TextSpan(children: [
-      TextSpan(
-        text: text[0],
-        style: TextStyle(color: color),
-      ),
-      TextSpan(text: text.substring(1)),
-    ]);
-  }
-
   Widget _buildAppBar() {
     return AppBar(
-      title: RichText(
-        text: TextSpan(style: appBarStyle, children: [
-          _buildMulticoloredRow(Colors.green, appBarTextFirst),
-          _buildMulticoloredRow(Colors.yellow, appBarTextOther),
-        ]),
+      title: Text(
+        appBarText,
+        textAlign: TextAlign.left,
+        style: appBarStyle,
       ),
       elevation: 0,
       backgroundColor: Colors.transparent,
@@ -32,15 +25,32 @@ class _SightListScreenState extends State<SightListScreen> {
     );
   }
 
+  Widget _buildBody() {
+    return ListView.builder(
+      itemCount: mocks.length,
+      itemBuilder: (context, index) => GestureDetector(
+        child: SightCard(
+          sight: mocks[index],
+        ),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SightDetails(
+                sight: mocks[index],
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
-      body: Container(
-        child: Center(
-          child: Text('Hello, world!!!'),
-        ),
-      ),
+      body: _buildBody(),
     );
   }
 }
