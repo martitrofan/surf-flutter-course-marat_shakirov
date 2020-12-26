@@ -1,5 +1,5 @@
 import 'domain/sight.dart';
-
+///тестовый массив для проверки отображения интерфейса
 final List<Sight> mocks = [
   Sight(
     name: 'Каза́нский кремль',

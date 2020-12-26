@@ -2,56 +2,53 @@ import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/res/res.dart';
 
+/// карточка для отображения в списке на экране SightListScreen
 class SightCard extends StatelessWidget {
   final Sight sight;
 
   const SightCard({Key key, this.sight}) : super(key: key);
 
   Widget _buildHeader() {
-    return Expanded(
-      child: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage(sight.url),
-            fit: BoxFit.cover,
-          ),
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: NetworkImage(sight.url),
+          fit: BoxFit.cover,
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(sight.type, style: typeStyle),
-              Image.asset('res/images/like.png'),
-            ],
-          ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(sight.type, style: typeStyle),
+            Image.asset('res/images/like.png'),
+          ],
         ),
       ),
     );
   }
 
   Widget _buildBody() {
-    return Expanded(
-      child: Container(
-        color: bottomBackgroundColor,
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                sight.name,
-                style: titleStyle,
-              ),
-              Text(
-                sight.details,
-                overflow: TextOverflow.ellipsis,
-                style: detailsStyle,
-              ),
-            ],
-          ),
+    return Container(
+      color: bottomBackgroundColor,
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              sight.name,
+              style: titleStyle,
+            ),
+            Text(
+              sight.details,
+              overflow: TextOverflow.ellipsis,
+              style: detailsStyle,
+            ),
+          ],
         ),
       ),
     );
@@ -68,8 +65,12 @@ class SightCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              _buildHeader(),
-              _buildBody(),
+              Expanded(
+                child: _buildHeader(),
+              ),
+              Expanded(
+                child: _buildBody(),
+              ),
             ],
           ),
         ),

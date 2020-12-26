@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:places/res/res.dart';
 
+///кнопка с картинкой и текстом
 class ButtonWithImageAndCaption extends StatelessWidget {
   final Color color;
   final String caption;
@@ -36,6 +37,7 @@ class ButtonWithImageAndCaption extends StatelessWidget {
   }
 }
 
+///кнопка для планирования похода
 class PlanButton extends StatelessWidget {
   final Color color;
   Function onPressed;
@@ -57,6 +59,7 @@ class PlanButton extends StatelessWidget {
   }
 }
 
+///кнопка для установки/снятия like
 class FavoritesButton extends StatelessWidget {
   final Color color;
   Function onPressed;

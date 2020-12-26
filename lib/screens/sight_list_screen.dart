@@ -5,6 +5,7 @@ import 'package:places/screens/sight_details.dart';
 
 import '../mocks.dart';
 
+///список мест для посещения
 class SightListScreen extends StatefulWidget {
   @override
   _SightListScreenState createState() => _SightListScreenState();
