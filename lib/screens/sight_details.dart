@@ -3,6 +3,7 @@ import 'package:places/domain/sight.dart';
 import 'package:places/res/res.dart';
 import 'package:places/widgets/buttons.dart';
 
+///детализация карточки места из экрана SightListScreen
 class SightDetails extends StatelessWidget {
   final Sight sight;
 
@@ -32,17 +33,21 @@ class SightDetails extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        PlanButton(
+        ButtonWithImageAndCaption(
           color: disabledColor,
           onPressed: () {
-            print('PlanButton Click');
+            print('Click $sightDetailsPlanBtn');
           },
+          caption: sightDetailsPlanBtn,
+          image: Image.asset(calendarImage),
         ),
-        FavoritesButton(
+        ButtonWithImageAndCaption(
           color: enabledColor,
           onPressed: () {
-            print('FavoritesButton Click');
+            print('Click $sightDetailsFavoriteBtn');
           },
+          caption: sightDetailsFavoriteBtn,
+          image: Image.asset(likeImage),
         ),
       ],
     );

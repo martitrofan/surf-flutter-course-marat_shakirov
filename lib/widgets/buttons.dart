@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:places/res/res.dart';
 
-///кнопка с картинкой и текстом
+/// Кнопка с картинкой слува и текстом справа
+/// Формирует кнопку в соответствии с переданными обязательными полями
+/// * [color] - цвет текста и картинки;
+/// * [caption]- текст ;
+/// * [image] - виджет c картинкой;
+/// * [onPressed] - функция которая должна отработать при нажатии на кнопку;
 class ButtonWithImageAndCaption extends StatelessWidget {
   final Color color;
   final String caption;
   final Image image;
-  Function onPressed;
+  final void Function() onPressed;
 
   ButtonWithImageAndCaption({
     Key key,
@@ -19,9 +24,7 @@ class ButtonWithImageAndCaption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlatButton.icon(
-      onPressed: () {
-        onPressed();
-      },
+      onPressed: onPressed,
       icon: ColorFiltered(
         child: image,
         colorFilter: ColorFilter.mode(
@@ -37,50 +40,7 @@ class ButtonWithImageAndCaption extends StatelessWidget {
   }
 }
 
-///кнопка для планирования похода
-class PlanButton extends StatelessWidget {
-  final Color color;
-  Function onPressed;
-
-  PlanButton({
-    Key key,
-    this.color,
-    @required this.onPressed,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ButtonWithImageAndCaption(
-      color: color,
-      onPressed: onPressed,
-      caption: sightDetailsPlanBtn,
-      image: Image.asset('res/images/calendar.png'),
-    );
-  }
-}
-
-///кнопка для установки/снятия like
-class FavoritesButton extends StatelessWidget {
-  final Color color;
-  Function onPressed;
-
-  FavoritesButton({
-    Key key,
-    this.color,
-    @required this.onPressed,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ButtonWithImageAndCaption(
-      color: color,
-      onPressed: onPressed,
-      caption: sightDetailsFavoriteBtn,
-      image: Image.asset('res/images/like.png'),
-    );
-  }
-}
-
+///кнопка построения маршрута.
 class RouteButton extends StatelessWidget {
   final Color color;
   Function onPressed;
@@ -101,15 +61,17 @@ class RouteButton extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
-      icon: Image.asset('res/images/go.png'),
+      icon: Image.asset(goImage),
       label: Text(
         sightDetailsRouteBtn,
-        style: DetailsTheme.getButtonWithImageAndCaptionStyle(Colors.white),
+        style: DetailsTheme.getButtonWithImageAndCaptionStyle(RouteButtonCaptionColor),
       ),
     );
   }
 }
 
+///Кнопка назад
+///Нужна для выполнения команды Navigator.of(context).pop();
 class MyBackButton extends StatelessWidget {
   const MyBackButton({
     Key key,

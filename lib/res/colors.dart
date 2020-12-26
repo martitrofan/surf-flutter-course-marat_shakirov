@@ -12,6 +12,7 @@ const disabledColor = Colors.black45;
 const enabledColor = Colors.black;
 
 const RouteButtonColor = Colors.green;
+const RouteButtonCaptionColor = Colors.white;
 
 
 
