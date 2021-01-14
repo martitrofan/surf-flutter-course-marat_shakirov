@@ -41,6 +41,9 @@ class SightCard extends StatelessWidget {
           children: [
             Text(
               sight.name,
+              textAlign: TextAlign.start,
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
               style: titleStyle,
             ),
             Text(
@@ -56,22 +59,26 @@ class SightCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      child: ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(16.0)),
-        child: Container(
-          height: 188.0,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(
-                child: _buildHeader(),
-              ),
-              Expanded(
-                child: _buildBody(),
-              ),
-            ],
+    return AspectRatio(
+      aspectRatio: 3 / 2,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        child: ClipRRect(
+          borderRadius: BorderRadius.all(Radius.circular(16.0)),
+          child: Container(
+            height: 188.0,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  child: _buildHeader(),
+                ),
+                const SizedBox(height: 10),
+                Expanded(
+                  child: _buildBody(),
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -12,18 +12,6 @@ class SightListScreen extends StatefulWidget {
 }
 
 class _SightListScreenState extends State<SightListScreen> {
-  Widget _buildAppBar() {
-    return AppBar(
-      title: Text(
-        appBarText,
-        textAlign: TextAlign.left,
-        style: appBarStyle,
-      ),
-      elevation: 0,
-      backgroundColor: Colors.transparent,
-      toolbarHeight: 128,
-    );
-  }
 
   Widget _buildBody() {
     return ListView.builder(
@@ -49,8 +37,27 @@ class _SightListScreenState extends State<SightListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppBar(),
+      appBar: MyAppBar(),
       body: _buildBody(),
     );
   }
+}
+
+class MyAppBar extends StatelessWidget implements  PreferredSizeWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title:Text(
+        appBarText,
+        textAlign: TextAlign.left,
+        style: appBarStyle,
+      ),
+      elevation: 0,
+      backgroundColor: Colors.transparent,
+      toolbarHeight: appBarToolbarHeight,
+    );
+  }
+
+  @override
+  Size get preferredSize => Size(double.infinity, appBarToolbarHeight);
 }
