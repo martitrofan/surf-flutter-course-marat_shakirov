@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/res/res.dart';
+import 'package:places/widgets/network_image_with_indicator.dart';
 
 /// карточка для отображения в списке на экране SightListScreen
 class SightCard extends StatelessWidget {
@@ -9,25 +10,26 @@ class SightCard extends StatelessWidget {
   const SightCard({Key key, this.sight}) : super(key: key);
 
   Widget _buildHeader() {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: NetworkImage(sight.url),
-          fit: BoxFit.cover,
+    return
+      Stack(
+        children: [
+        Container(
+          width: double.infinity,
+          child: NetworkImageWithIndicator(url: sight.url,fit: BoxFit.cover),
         ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(sight.type, style: typeStyle),
-            Image.asset('res/images/like.png'),
-          ],
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(sight.type, style: typeStyle),
+              Image.asset('res/images/like.png'),
+            ],
+          ),
         ),
-      ),
-    );
+      ],)
+    ;
   }
 
   Widget _buildBody() {
@@ -73,7 +75,6 @@ class SightCard extends StatelessWidget {
                 Expanded(
                   child: _buildHeader(),
                 ),
-                const SizedBox(height: 10),
                 Expanded(
                   child: _buildBody(),
                 ),

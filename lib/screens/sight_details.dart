@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/res/res.dart';
 import 'package:places/widgets/buttons.dart';
+import 'package:places/widgets/network_image_with_indicator.dart';
 
 ///детализация карточки места из экрана SightListScreen
 class SightDetails extends StatelessWidget {
@@ -15,8 +16,8 @@ class SightDetails extends StatelessWidget {
   Widget _buldHeader() {
     return Stack(
       children: [
-        Image.network(
-          sight.url,
+        NetworkImageWithIndicator(
+          url: sight.url,
           fit: BoxFit.cover,
           height: 360,
         ),
