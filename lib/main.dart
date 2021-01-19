@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:places/screens/home_screen.dart';
 import 'package:places/screens/sight_list_screen.dart';
+import 'package:places/screens/visiting_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "places",
-      home: SightListScreen(),
+      home: HomeScreen (),
     );
   }
 }

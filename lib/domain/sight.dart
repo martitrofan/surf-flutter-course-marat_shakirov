@@ -1,3 +1,4 @@
+
 ///Класс отображающий схему объекта - местоположение.
 class Sight {
   /// название места;
@@ -21,6 +22,12 @@ class Sight {
   ///  время работы;
   final String workedTime;
 
+  ///  запланировано посещение;
+  bool visiting;
+
+  ///  дата планируемого посещения;
+  final String datVisit;
+
   Sight({
     this.name,
     this.lon,
@@ -29,5 +36,7 @@ class Sight {
     this.details,
     this.type,
     this.workedTime,
+    this.visiting,
+    this.datVisit,
   });
 }

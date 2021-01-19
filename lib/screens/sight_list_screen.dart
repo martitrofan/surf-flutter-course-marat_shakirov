@@ -7,6 +7,7 @@ import '../mocks.dart';
 
 ///список мест для посещения
 class SightListScreen extends StatefulWidget {
+
   @override
   _SightListScreenState createState() => _SightListScreenState();
 }
@@ -37,18 +38,20 @@ class _SightListScreenState extends State<SightListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(),
+      appBar: _MyAppBar(),
       body: _buildBody(),
     );
   }
 }
 
-class MyAppBar extends StatelessWidget implements  PreferredSizeWidget {
+class _MyAppBar extends StatelessWidget implements PreferredSizeWidget {
+  static const double appBarToolbarHeight = 128;
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title:Text(
-        appBarText,
+      title: Text(
+        appBarMainText,
         textAlign: TextAlign.left,
         style: appBarStyle,
       ),

@@ -53,6 +53,10 @@ class SightCard extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               style: detailsStyle,
             ),
+            Text(
+              sight.workedTime ?? '',
+              style: DetailsTheme.workTimeStyle,
+            ),
           ],
         ),
       ),
