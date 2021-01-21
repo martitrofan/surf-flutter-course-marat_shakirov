@@ -1,4 +1,5 @@
 import 'domain/sight.dart';
+
 ///тестовый массив для проверки отображения интерфейса
 final List<Sight> mocks = [
   Sight(
@@ -9,7 +10,9 @@ final List<Sight> mocks = [
         'https://upload.wikimedia.org/wikipedia/commons/1/15/Kazan_Kremlin_-_panoramio_%286%29.jpg',
     lat: 55.7989416,
     lon: 49.1061747,
-    type: 'Исторический',
+    type: 'Особое место',
+    workedTime: 'Круглосуточно',
+    visiting: true,
   ),
   Sight(
     name: 'Мечеть «Кул-Шариф»',
@@ -21,6 +24,7 @@ final List<Sight> mocks = [
     lon: 49.1049289,
     type: 'Памятник',
     workedTime: 'закрыто до 09:00',
+    visiting: true,
   ),
   Sight(
     name: 'Центр семьи «Казан»',
@@ -30,6 +34,8 @@ final List<Sight> mocks = [
     lat: 55.812785,
     lon: 49.108237,
     type: 'Достопримечательность',
+    workedTime: 'Открыто до 23:00',
+    visiting: false,
   ),
   Sight(
     name: 'Дворе́ц земледе́льцев',
@@ -40,5 +46,8 @@ final List<Sight> mocks = [
     lat: 55.800509,
     lon: 49.112010,
     type: 'Достопримечательность',
+    workedTime: 'Открыто круглосуточно',
+    datVisit: '01.03.21',
+    visiting: false,
   ),
 ];

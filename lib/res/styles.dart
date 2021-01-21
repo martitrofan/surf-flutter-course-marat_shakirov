@@ -27,6 +27,26 @@ final typeStyle = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
+final emptyAppBarTitleStyle = TextStyle(
+  color: enabledColor,
+  fontWeight: FontWeight.w500,
+  fontSize: 18.0,
+  height: 18.0 / 24.0,
+);
+
+final visitingAppBarTitleStyle = TextStyle(
+  color: enabledColor,
+  fontWeight: FontWeight.w500,
+  fontSize: 18.0,
+  height: 18.0 / 24.0,
+);
+
+const tabLabelStyle = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.bold,
+  color: Colors.white,
+);
+
 class DetailsTheme {
   static const sightDetailsName = TextStyle(
     fontSize: 24,
@@ -50,10 +70,11 @@ class DetailsTheme {
     color: disabledColor,
   );
 
-  static TextStyle getButtonWithImageAndCaptionStyle(Color color){
+  static TextStyle getButtonWithImageAndCaptionStyle(Color color) {
     return TextStyle(
       color: color,
       fontSize: 14,
     );
   }
 }
+
