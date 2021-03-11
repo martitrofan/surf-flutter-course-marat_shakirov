@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
-import 'package:places/res/res.dart';
+import 'package:places/screens/res/res.dart';
 import 'package:places/widgets/network_image_with_indicator.dart';
 
 /// карточка для отображения в списке на экране SightListScreen
@@ -32,9 +32,9 @@ class SightCard extends StatelessWidget {
     ;
   }
 
-  Widget _buildBody() {
+  Widget _buildBody(BuildContext context) {
     return Container(
-      color: bottomBackgroundColor,
+      color: Theme.of(context).backgroundColor,
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -46,16 +46,16 @@ class SightCard extends StatelessWidget {
               textAlign: TextAlign.start,
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
-              style: titleStyle,
+              style: Theme.of(context).textTheme.subtitle1,
             ),
             Text(
               sight.details,
               overflow: TextOverflow.ellipsis,
-              style: detailsStyle,
+              style: Theme.of(context).textTheme.bodyText2,
             ),
             Text(
               sight.workedTime ?? '',
-              style: DetailsTheme.workTimeStyle,
+              style: Theme.of(context).textTheme.bodyText2,
             ),
           ],
         ),
@@ -80,7 +80,7 @@ class SightCard extends StatelessWidget {
                   child: _buildHeader(),
                 ),
                 Expanded(
-                  child: _buildBody(),
+                  child: _buildBody(context),
                 ),
               ],
             ),

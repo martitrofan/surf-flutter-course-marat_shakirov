@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:places/res/res.dart';
+import 'package:places/screens/res/res.dart';
 import 'package:places/screens/sight_card.dart';
 import 'package:places/screens/sight_details.dart';
 
@@ -7,13 +7,11 @@ import '../mocks.dart';
 
 ///список мест для посещения
 class SightListScreen extends StatefulWidget {
-
   @override
   _SightListScreenState createState() => _SightListScreenState();
 }
 
 class _SightListScreenState extends State<SightListScreen> {
-
   Widget _buildBody() {
     return ListView.builder(
       itemCount: mocks.length,
@@ -53,10 +51,10 @@ class _MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Text(
         appBarMainText,
         textAlign: TextAlign.left,
-        style: appBarStyle,
+        style: Theme.of(context).textTheme.headline1,
       ),
       elevation: 0,
-      backgroundColor: Colors.transparent,
+      //backgroundColor: Colors.transparent,
       toolbarHeight: appBarToolbarHeight,
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:places/res/res.dart';
+import 'package:places/screens/res/res.dart';
 import 'package:places/screens/sight_list_screen.dart';
 import 'package:places/screens/visiting_screen.dart';
 import 'package:places/screens/empty_screen.dart';

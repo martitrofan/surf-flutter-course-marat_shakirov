@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:places/res/res.dart';
+import 'package:places/screens/res/res.dart';
 import 'package:places/widgets/bubble_tab_indicator.dart';
 
 ///красивые кнопки в tabbar
@@ -18,11 +18,11 @@ class CustomTabBar extends PreferredSize {
         indicatorSize: TabBarIndicatorSize.tab,
         indicator: BubbleTabIndicator(
           indicatorHeight: 40.0,
-          indicatorColor: appBarActiveColor,
+          //indicatorColor: appBarActiveColor,
           tabBarIndicatorSize: TabBarIndicatorSize.tab,
         ),
-        unselectedLabelColor: Colors.black54,
-        labelStyle: tabLabelStyle,
+        //unselectedLabelColor: Colors.black54,
+        //labelStyle: tabLabelStyle,
         tabs: [
           Tab(text: visitingWantVisitTab),
           Tab(text: visitingVisitedTab),

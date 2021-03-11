@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:places/res/res.dart';
+import 'package:places/screens/res/res.dart';
 import 'package:places/screens/sight_card.dart';
 import 'package:places/widgets/custom_tab_bar.dart';
 
@@ -21,9 +21,9 @@ class _VisitingScreenState extends State<VisitingScreen> {
           centerTitle: true,
           title: Text(
             appBarLikedText,
-            style: visitingAppBarTitleStyle,
+           // style: visitingAppBarTitleStyle,
           ),
-          backgroundColor: transparent,
+          //backgroundColor: transparent,
           elevation: 0,
           bottom: CustomTabBar(),
         ),

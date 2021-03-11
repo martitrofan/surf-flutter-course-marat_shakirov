@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
-import 'package:places/res/res.dart';
+import 'package:places/screens/res/res.dart';
 import 'package:places/widgets/buttons.dart';
 import 'package:places/widgets/network_image_with_indicator.dart';
 
@@ -54,7 +54,7 @@ class SightDetails extends StatelessWidget {
     );
   }
 
-  Widget _buldBody() {
+  Widget _buldBody(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
         left: 16,
@@ -69,19 +69,19 @@ class SightDetails extends StatelessWidget {
             ),
             child: Text(
               sight.name,
-              style: DetailsTheme.sightDetailsName,
+              style: Theme.of(context).textTheme.bodyText1,
             ),
           ),
           Row(
             children: [
               Text(
                 sight.type,
-                style: DetailsTheme.sightDetailsType,
+                style: Theme.of(context).textTheme.bodyText2,
               ),
               const SizedBox(width: 16),
               Text(
                 sight.workedTime ?? '',
-                style: DetailsTheme.workTimeStyle,
+                style: Theme.of(context).textTheme.bodyText2,
               ),
             ],
           ),
@@ -89,7 +89,7 @@ class SightDetails extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 24),
             child: Text(
               sight.details,
-              style: DetailsTheme.sightDetailsDetails,
+              style: Theme.of(context).textTheme.bodyText2,
             ),
           ),
           RouteButton(
@@ -113,7 +113,7 @@ class SightDetails extends StatelessWidget {
         child: Column(
           children: [
             _buldHeader(),
-            _buldBody(),
+            _buldBody(context),
           ],
         ),
       ),
