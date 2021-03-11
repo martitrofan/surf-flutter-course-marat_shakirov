@@ -11,13 +11,6 @@ final lightTheme = ThemeData(
   scaffoldBackgroundColor: AppColorsLight.white,
   dividerColor: AppColorsLight.secondary2,
   buttonColor: AppColorsLight.green,
-  /*appBarTheme: AppBarTheme(
-      color: AppColorsLight.white,
-      textTheme: TextTheme(
-        headline2: AppTextStyles.subTitle.copyWith(
-          color: AppColorsLight.white,
-        ),
-      )),*/
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     backgroundColor: AppColorsLight.white,
     selectedItemColor: AppColorsLight.white,
@@ -48,13 +41,6 @@ final darkTheme = ThemeData(
   scaffoldBackgroundColor: AppColorsDark.main,
   dividerColor: AppColorsDark.secondary2,
   buttonColor: AppColorsDark.green,
-  /*appBarTheme: AppBarTheme(
-      color: AppColorsDark.main,
-      textTheme: TextTheme(
-        headline2: AppTextStyles.subTitle.copyWith(
-          color: AppColorsDark.white,
-        ),
-      )),*/
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     backgroundColor: AppColorsDark.main,
     selectedItemColor: AppColorsDark.white,
@@ -77,35 +63,5 @@ final darkTheme = ThemeData(
     bodyText2: detailsStyle.copyWith(
       color: AppColorsDark.secondary2,
     ),
-    /*headline2: AppTextStyles.subTitle.copyWith(
-      color: AppColorsDark.white,
-    ),
-    subtitle1: AppTextStyles.title.copyWith(
-      color: AppColorsDark.white,
-    ),
-    subtitle2: AppTextStyles.text.copyWith(
-      color: AppColorsDark.white,
-    ),
-    bodyText1: AppTextStyles.smallBold.copyWith(
-      color: AppColorsDark.white,
-    ),
-    bodyText2: AppTextStyles.small.copyWith(
-      color: AppColorsDark.secondary2,
-    ),
-    headline3: AppTextStyles.small.copyWith(
-      color: AppColorsDark.green,
-    ),
-    headline4: AppTextStyles.small.copyWith(
-      color: AppColorsDark.inactiveBlack,
-    ),
-    headline5: AppTextStyles.small.copyWith(
-      color: AppColorsDark.white,
-    ),
-    overline: AppTextStyles.superSmall.copyWith(
-      color: AppColorsDark.white,
-    ),
-    button: AppTextStyles.button.copyWith(
-      color: AppColorsDark.white,
-    ),*/
   ),
 );
