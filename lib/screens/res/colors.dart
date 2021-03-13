@@ -12,8 +12,8 @@ const visitTabBarBackgroundColor = Color(0xffF5F5F5);
 const disabledColor = Colors.black45;
 const enabledColor = Colors.black;
 
-const RouteButtonColor = Colors.green;
-const RouteButtonCaptionColor = Colors.white;
+const routeButtonColor = Colors.green;
+const routeButtonCaptionColor = Colors.white;
 
 const transparent = Colors.transparent;
 

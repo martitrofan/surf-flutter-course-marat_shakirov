@@ -8,7 +8,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
 
-  final isDark = true;
+  final isDark = false;
 
   @override
   Widget build(BuildContext context) {
