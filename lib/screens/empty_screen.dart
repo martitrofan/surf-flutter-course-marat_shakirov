@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:places/res/res.dart';
+import 'package:places/screens/res/res.dart';
 
 ///пустая страница, используется как загрушка
 class EmptyScreen extends StatefulWidget {
