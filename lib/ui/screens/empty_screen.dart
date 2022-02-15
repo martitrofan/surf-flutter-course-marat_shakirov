@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:places/screens/res/res.dart';
+import 'package:places/ui/screens/res/res.dart';
 
 ///пустая страница, используется как загрушка
 class EmptyScreen extends StatefulWidget {
   final String title;
 
-  EmptyScreen({
-    Key key,
-    this.title,
+  const EmptyScreen({
+    Key? key,
+    required this.title,
   }) : super(key: key);
 
   @override
@@ -16,7 +16,7 @@ class EmptyScreen extends StatefulWidget {
 
 class _EmptyScreenState extends State<EmptyScreen> {
   Widget _buildBody() {
-    return Center(
+    return const Center(
       child: Text('пусто'),
     );
   }

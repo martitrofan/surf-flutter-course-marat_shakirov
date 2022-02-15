@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:places/screens/home_screen.dart';
-import 'package:places/screens/res/res.dart';
+import 'package:places/ui/screens/res/res.dart';
+
+import 'ui/screens/home_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
 
-  final isDark = false;
+  final isDark = true;
+
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "places",
       theme:  isDark ? darkTheme : lightTheme,
-      home: HomeScreen (),
+      home: const HomeScreen (),
     );
   }
 }

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:places/screens/res/res.dart';
-import 'package:places/screens/sight_card.dart';
-import 'package:places/widgets/custom_tab_bar.dart';
-
-import '../mocks.dart';
+import 'package:places/mocks.dart';
+import 'package:places/ui/screens/res/res.dart';
+import 'package:places/ui/screens/sight_card.dart';
+import 'package:places/ui/widgets/bubble_tab_indicator.dart';
+import 'package:places/ui/widgets/custom_tab_bar.dart';
 
 ///класс для отображения списка мест которые уже посетил и планируешь посетить
 class VisitingScreen extends StatefulWidget {
+  const VisitingScreen({Key? key}) : super(key: key);
+
   @override
   _VisitingScreenState createState() => _VisitingScreenState();
 }
@@ -19,13 +21,33 @@ class _VisitingScreenState extends State<VisitingScreen> {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text(
+          title: const Text(
             appBarLikedText,
-           // style: visitingAppBarTitleStyle,
           ),
           //backgroundColor: transparent,
           elevation: 0,
-          bottom: CustomTabBar(),
+          bottom: const CustomTabBar(
+              preferredSize: Size.fromHeight(52),
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 6,
+                ),
+                child: TabBar(
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  indicator: BubbleTabIndicator(
+                    indicatorHeight: 40.0,
+                    //indicatorColor: appBarActiveColor,
+                    tabBarIndicatorSize: TabBarIndicatorSize.tab,
+                  ),
+                  //unselectedLabelColor: Colors.black54,
+                  //labelStyle: tabLabelStyle,
+                  tabs: [
+                    Tab(text: visitingWantVisitTab),
+                    Tab(text: visitingVisitedTab),
+                  ],
+                ),
+              )),
         ),
         body: const Padding(
           padding: EdgeInsets.only(top: 16.0),
@@ -44,7 +66,7 @@ class _VisitingScreenState extends State<VisitingScreen> {
 ///места которые уже посетил
 class Visited extends StatelessWidget {
   const Visited({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -62,7 +84,7 @@ class Visited extends StatelessWidget {
 ///места которые планируется посетить
 class WantVisit extends StatelessWidget {
   const WantVisit({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -76,5 +98,3 @@ class WantVisit extends StatelessWidget {
         ],
       );
 }
-
-

@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:places/screens/res/res.dart';
-import 'package:places/screens/sight_list_screen.dart';
-import 'package:places/screens/visiting_screen.dart';
-import 'package:places/screens/empty_screen.dart';
+import 'package:places/ui/screens/empty_screen.dart';
+import 'package:places/ui/screens/res/res.dart';
+import 'package:places/ui/screens/sight_list_screen.dart';
+import 'package:places/ui/screens/visiting_screen.dart';
 
 ///Домашняя (базовая) страница для навигатора между другими окнами
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
   int _index = 0;
-  String _title;
 
-  List<Widget> pages = [
+  List<Widget> pages = const [
     SightListScreen(),
     EmptyScreen(title: appBarMapText,),
     VisitingScreen(),

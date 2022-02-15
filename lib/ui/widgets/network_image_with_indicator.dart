@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 ///Картинка из интернета, до загрузки отображается индикатор загрузки
 /// Формирует виджет в соответствии с переданными обязательными полями
 /// * [url] - путь до картинки;
@@ -9,13 +8,13 @@ import 'package:flutter/material.dart';
 /// * [height]- высота, не обязательный. Если не передать, то будет использована высота картинки, может испортить верстку;
 class NetworkImageWithIndicator extends StatelessWidget {
   final String url;
-  final BoxFit fit;
-  final double width;
-  final double height;
+  final BoxFit? fit;
+  final double? width;
+  final double? height;
 
-  NetworkImageWithIndicator({
-    Key key,
-    @required this.url,
+  const NetworkImageWithIndicator({
+    Key? key,
+    required this.url,
     this.fit,
     this.height,
     this.width,
@@ -34,13 +33,14 @@ class NetworkImageWithIndicator extends StatelessWidget {
         } else {
           if (loadingProgress.expectedTotalBytes == null ||
               loadingProgress.expectedTotalBytes == 0) {
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator();
+          } else {
+            num totalBytes = loadingProgress.expectedTotalBytes ?? 1;
+            final progress = loadingProgress.cumulativeBytesLoaded / totalBytes;
+            return Center(
+              child: CircularProgressIndicator(value: progress),
+            );
           }
-          final progress = loadingProgress.cumulativeBytesLoaded /
-              loadingProgress.expectedTotalBytes;
-          return Center(
-            child: CircularProgressIndicator(value: progress),
-          );
         }
       },
     );

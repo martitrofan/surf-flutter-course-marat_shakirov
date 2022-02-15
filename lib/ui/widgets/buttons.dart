@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:places/screens/res/res.dart';
+import 'package:places/ui/screens/res/res.dart';
 
 /// Кнопка с картинкой слува и текстом справа
 /// Формирует кнопку в соответствии с переданными обязательными полями
@@ -13,17 +13,17 @@ class ButtonWithImageAndCaption extends StatelessWidget {
   final Image image;
   final void Function() onPressed;
 
-  ButtonWithImageAndCaption({
-    Key key,
-    @required this.color,
-    @required this.caption,
-    @required this.image,
-    @required this.onPressed,
+  const ButtonWithImageAndCaption({
+    Key? key,
+    required this.color,
+    required this.caption,
+    required this.image,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton.icon(
+    return TextButton.icon(
       onPressed: onPressed,
       icon: ColorFiltered(
         child: image,
@@ -43,28 +43,34 @@ class ButtonWithImageAndCaption extends StatelessWidget {
 ///кнопка построения маршрута.
 class RouteButton extends StatelessWidget {
   final Color color;
-  Function onPressed;
+  final Function onPressed;
 
-  RouteButton({
-    Key key,
-    this.color,
-    @required this.onPressed,
+  const RouteButton({
+    Key? key,
+    required this.color,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton.icon(
-      onPressed: onPressed,
-      color: color,
-      height: 48,
-      minWidth: double.infinity,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
-      icon: Image.asset(goImage),
-      label: Text(
-        sightDetailsRouteBtn,
-        style: DetailsTheme.getButtonWithImageAndCaptionStyle(RouteButtonCaptionColor),
+    return ElevatedButton(
+      onPressed: () {
+        onPressed.call();
+      },
+      child: SizedBox(
+        height: 48,
+        width: double.infinity,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(goImage),
+            Text(
+              sightDetailsRouteBtn,
+              style: DetailsTheme.getButtonWithImageAndCaptionStyle(
+                  routeButtonCaptionColor),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -74,24 +80,27 @@ class RouteButton extends StatelessWidget {
 ///Нужна для выполнения команды Navigator.of(context).pop();
 class MyBackButton extends StatelessWidget {
   const MyBackButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: 32,
       height: 32,
-      child: FlatButton(
+      decoration: BoxDecoration(
+        color: Theme.of(context).backgroundColor,
+        shape: BoxShape.rectangle,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: IconButton(
         padding: const EdgeInsets.all(0),
         onPressed: () {
           Navigator.of(context).pop();
         },
         color: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: const Icon(Icons.chevron_left),
+        splashColor: Colors.red,
+        icon: const Icon(Icons.chevron_left),
       ),
     );
   }

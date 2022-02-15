@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:places/screens/res/res.dart';
+import 'package:places/ui/screens/res/res.dart';
 
-final appBarStyle = TextStyle(
+const appBarStyle = TextStyle(
   color: appBarTitleColor,
   fontSize: 32,
   fontFamily: 'Roboto',
@@ -9,32 +9,32 @@ final appBarStyle = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
-final titleStyle = TextStyle(
+const titleStyle = TextStyle(
   color: sightCardTitleColor,
   fontSize: 16.0,
   fontWeight: FontWeight.w500,
 );
 
-final detailsStyle = TextStyle(
+const detailsStyle = TextStyle(
   color: sightCardDetailsColor,
   fontSize: 14.0,
   fontWeight: FontWeight.w400,
 );
 
-final typeStyle = TextStyle(
+const typeStyle = TextStyle(
   color: sightCardTypeColor,
   fontSize: 14.0,
   fontWeight: FontWeight.w700,
 );
 
-final emptyAppBarTitleStyle = TextStyle(
+const emptyAppBarTitleStyle = TextStyle(
   color: enabledColor,
   fontWeight: FontWeight.w500,
   fontSize: 18.0,
   height: 18.0 / 24.0,
 );
 
-final visitingAppBarTitleStyle = TextStyle(
+const visitingAppBarTitleStyle = TextStyle(
   color: enabledColor,
   fontWeight: FontWeight.w500,
   fontSize: 18.0,

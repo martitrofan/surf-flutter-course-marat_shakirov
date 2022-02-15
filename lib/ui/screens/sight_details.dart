@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
-import 'package:places/screens/res/res.dart';
-import 'package:places/widgets/buttons.dart';
-import 'package:places/widgets/network_image_with_indicator.dart';
+import 'package:places/ui/screens/res/res.dart';
+import 'package:places/ui/widgets/buttons.dart';
+import 'package:places/ui/widgets/network_image_with_indicator.dart';
 
 ///детализация карточки места из экрана SightListScreen
 class SightDetails extends StatelessWidget {
   final Sight sight;
 
   const SightDetails({
-    Key key,
-    @required this.sight,
+    Key? key,
+    required this.sight,
   }) : super(key: key);
 
   Widget _buldHeader() {
@@ -37,7 +37,7 @@ class SightDetails extends StatelessWidget {
         ButtonWithImageAndCaption(
           color: disabledColor,
           onPressed: () {
-            print('Click $sightDetailsPlanBtn');
+            debugPrint('Click $sightDetailsPlanBtn');
           },
           caption: sightDetailsPlanBtn,
           image: Image.asset(calendarImage),
@@ -45,7 +45,7 @@ class SightDetails extends StatelessWidget {
         ButtonWithImageAndCaption(
           color: enabledColor,
           onPressed: () {
-            print('Click $sightDetailsFavoriteBtn');
+            debugPrint('Click $sightDetailsFavoriteBtn');
           },
           caption: sightDetailsFavoriteBtn,
           image: Image.asset(likeImage),
@@ -93,9 +93,9 @@ class SightDetails extends StatelessWidget {
             ),
           ),
           RouteButton(
-            color: RouteButtonColor,
+            color: routeButtonColor,
             onPressed: () {
-              print('RouteButton Click');
+              debugPrint('RouteButton Click');
             },
           ),
           const SizedBox(height: 24),

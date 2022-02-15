@@ -10,8 +10,7 @@ final lightTheme = ThemeData(
   secondaryHeaderColor: AppColorsLight.main,
   scaffoldBackgroundColor: AppColorsLight.white,
   dividerColor: AppColorsLight.secondary2,
-  buttonColor: AppColorsLight.green,
-  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: AppColorsLight.white,
     selectedItemColor: AppColorsLight.white,
     unselectedItemColor: AppColorsLight.white,
@@ -40,13 +39,12 @@ final darkTheme = ThemeData(
   secondaryHeaderColor: AppColorsDark.white,
   scaffoldBackgroundColor: AppColorsDark.main,
   dividerColor: AppColorsDark.secondary2,
-  buttonColor: AppColorsDark.green,
-  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: AppColorsDark.main,
     selectedItemColor: AppColorsDark.white,
     unselectedItemColor: AppColorsDark.white,
   ),
-  tabBarTheme: TabBarTheme(
+  tabBarTheme: const TabBarTheme(
     unselectedLabelColor: AppColorsDark.secondary2,
     labelColor: AppColorsDark.secondary,
   ),

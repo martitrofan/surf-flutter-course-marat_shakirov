@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:places/screens/res/res.dart';
-import 'package:places/screens/sight_card.dart';
-import 'package:places/screens/sight_details.dart';
+import 'package:places/mocks.dart';
+import 'package:places/ui/screens/res/res.dart';
+import 'package:places/ui/screens/sight_card.dart';
+import 'package:places/ui/screens/sight_details.dart';
 
-import '../mocks.dart';
 
 ///список мест для посещения
 class SightListScreen extends StatefulWidget {
+  const SightListScreen({Key? key}) : super(key: key);
+
   @override
   _SightListScreenState createState() => _SightListScreenState();
 }
@@ -54,11 +56,10 @@ class _MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         style: Theme.of(context).textTheme.headline1,
       ),
       elevation: 0,
-      //backgroundColor: Colors.transparent,
       toolbarHeight: appBarToolbarHeight,
     );
   }
 
   @override
-  Size get preferredSize => Size(double.infinity, appBarToolbarHeight);
+  Size get preferredSize => const Size(double.infinity, appBarToolbarHeight);
 }
